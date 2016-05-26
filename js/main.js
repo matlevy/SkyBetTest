@@ -2,7 +2,7 @@ function renderBets($container, $template, bets) {
     $container.html('');
     bets.forEach(function (bet) {
         var $bet = $template.clone();
-        $bet.data(bet);
+        $bet.find('.bet').data(bet);
         $bet.find('.bet__event').text(bet.event);
         $bet.find('.bet__name').text(bet.name);
         $bet.find('.bet__odds').text(formatOdds(bet.odds)).data('odds', bet.odds);
@@ -79,8 +79,8 @@ $.get('http://skybettechtestapi.herokuapp.com/available')
 /**
  * @todo Think about how the betslip show behave when selections are added and removed
  */
-$app.on('click', '.js-odds', function () {
-    var $bet = $(this).parent('.bet');
+$app.on('click', '.bet_link', function () {
+    var $bet = $(this).children('.bet');
     var betId = $bet.data('bet_id');
 
     if (betslip.indexOf(betId) === -1) {
@@ -89,9 +89,12 @@ $app.on('click', '.js-odds', function () {
 
         renderSelection($selections, $selection);
         betslip.push(betId);
+
+        $( $bet ).addClass('selected');
     } else {
         removeSelection(betId);
         betslip.splice(betslip.indexOf(betId), 1);
+        $( $bet ).removeClass('selected');
     }
 });
 

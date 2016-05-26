@@ -1,0 +1,63 @@
+@import "partials/common_vars";
+@import "partials/core";
+@import "partials/spinner";
+
+body, html {
+	padding:0;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+}
+
+body {
+	font-family: $base_font;
+	background: $primary_bg;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e7177d+0,c4196c+50,c4196c+51,e7177d+100 */
+	background: #e7177d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e7177d 0%, #c4196c 50%, #c4196c 51%, #e7177d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #e7177d 0%,#c4196c 50%,#c4196c 51%,#e7177d 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #e7177d 0%,#c4196c 50%,#c4196c 51%,#e7177d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7177d', endColorstr='#e7177d',GradientType=0 ); /* IE6-9 */
+
+}
+
+body .container {
+
+	width: 100%;
+	padding: 1rem;
+
+	@media screen and (min-width: 960px) {
+		width: 960px;
+		margin: 0 auto;
+	}
+
+	.app_view {
+
+		margin-top: 2rem;
+		padding: 1rem;
+		background: white;
+		border-radius: 1rem;
+
+		.application_title {
+			font-size: 2rem;
+		}
+
+		.application_title, h2 {
+			font-family: $title_font;
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		h2 {
+			font-weight: bold;
+		}
+	}
+
+	@import "partials/available_bets";
+	@import "partials/selection";
+	@import "partials/reciept";
+}

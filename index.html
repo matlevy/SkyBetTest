@@ -2,111 +2,93 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sky Betting and Gaming UX Test</title>
+    <script src="https://use.typekit.net/dca5ueq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script src="js/vendor/jquery-2.1.3.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-        .spinner {
-            -webkit-animation-name: spinner;
-            -webkit-animation-duration: 1.2s;
-            -webkit-animation-iteration-count: infinite;
-            -webkit-animation-timing-function: linear;
-            animation-name: spinner;
-            animation-duration: 1.2s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            width: 128px;
-        }
-
-        @keyframes spinner {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @-webkit-keyframes spinner {
-             from {
-                 transform: rotate(0deg);
-             }
-
-             to {
-                 transform: rotate(360deg);
-             }
-         }
-
-        .js-toggle {
-            cursor: pointer;
-        }
-
-        .is-hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-<h1>Sky Betting and Gaming UX Test</h1>
 
-<table id="bet-list">
-    <caption>Available Bets</caption>
-    <tbody id="bets">
-    <tr>
-        <td><img src="img/spinner.gif" alt="" class="spinner"/></td>
-    </tr>
-    </tbody>
-</table>
+<div class="container">
 
-<div id="betslip">
-    <h1 class="js-toggle">Your Betslip</h1>
-    <div id="selections" class="js-toggle-target"></div>
-</div>
+    <div class="app_view">
 
-<div>
-    <h1 class="js-toggle">Your Receipts</h1>
-    <div id="receipts" class="js-toggle-target"></div>
+        <div>
+            <h1 class="application_title">Sky Betting and Gaming UX Test</h1>
+        </div>
+
+        <div class="available_bets">
+            <div id="bet-list">
+                <h2>Available Bets</h2>
+                <div id="bets" class="clear">
+                    <div><img src="img/spinner.gif" alt="" class="spinner"/></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bet_slip_container">
+            <div id="betslip">
+                <a name="bets"></a>
+                <h2 class="js-toggle">Your Betslip</h2>
+                <div id="selections" class="js-toggle-target"></div>
+            </div>
+        </div>
+
+        <div class="reciepts_container">
+            <div>
+                <h2 class="js-toggle">Your Receipts</h2>
+                <div id="receipts" class="js-toggle-target"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <script type="text/template" id="bet">
-    <tr class="bet">
-        <td class="bet__event"></td>
-        <td class="bet__name"></td>
-        <td class="bet__odds js-odds"></td>
-    </tr>
+    <a href="#bets" class="bet_link">
+        <div class="bet">
+            <div class="event clear bet__event"></div>
+            <div class="clear">
+                <div class="name bet__name"></div>
+                <div class="odds"><span class="odds_value bet__odds js-odds"></span></div>
+            </div>
+        </div>
+    </a>
 </script>
+
+
 <script type="text/template" id="selection">
     <form class="js-selection" novalidate>
-        <table>
-            <caption class="selection__title"></caption>
-            <tbody>
-            <tr class="selection">
-                <td class="selection__stake">
-                    <input type="number" step="5" class="js-stake" name="stake" autofocus/>
-                </td>
-                <td class="selection__returns js-returns"></td>
-                <td class="selection__action">
+        <div class="selection">
+            <div class="clear selection__title"></div>
+            <div class="clear">
+                <div class="selection_stake">
+                    <div class="selection__stake">
+                        <input type="number" step="5" class="js-stake" name="stake" autofocus/>
+                    </div>
+                    <div class="selection__returns js-returns"></div>
+                </div>
+                <div class="selection__action">
                     <button type="submit" class="js-place-bet" disabled>Place Bet</button>
-                </td>
-
-            </tr>
-            </tbody>
-        </table>
+                </div>
+            </div>
+        </div>
     </form>
 </script>
+
 <script type="text/template" id="receipt">
-    <table>
-        <caption class="receipt__title"></caption>
-        <tbody>
-        <tr class="receipt">
-            <td class="receipt__stake"></td>
-            <td class="receipt__returns"></td>
-            <td class="receipt__transaction-id"></td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="reciept">
+        <div class="claer receipt__title"></div>
+        <div class="clear">
+            <span class="receipt__stake"></span>
+            <span class="receipt__returns"></span>
+            <span class="receipt__transaction-id"></span>
+        </div>
+    </div>
 </script>
 
 

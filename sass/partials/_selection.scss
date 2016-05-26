@@ -1,0 +1,60 @@
+.js-selection {
+	margin:0;
+	padding:0;
+}
+
+.selection {
+
+	@extend .panel;
+
+	.selection__title {
+		display: inline;
+		position: relative;
+		float: left;
+		color: black !important;
+	}
+
+	.selection__title {
+		width: 100%;
+		padding-bottom: 1rem;
+	}
+
+	.selection_stake {
+		width: 100%;
+	}
+
+	.selection__action {
+		width: 100%;
+	}
+
+	.selection_stake, .selection__action {
+		display: inline;
+		position: relative;
+		float: left;
+	}
+
+	.selection__stake, .selection__returns {
+		float: left;
+		width:auto;
+		display: inline-block;
+	}
+
+	.selection__action button {
+		width: 100%;
+	}
+
+	.selection__returns {
+		padding: 1rem;
+		font-size: 1.5rem;
+	}
+
+	@media screen and (min-width: 960px) {
+		.selection_stake {
+			width: 80%;
+		}
+
+		.selection__action {
+			width: 20%;
+		}
+	}
+}

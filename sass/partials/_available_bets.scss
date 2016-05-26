@@ -1,0 +1,55 @@
+.bet {
+
+	@extend .panel;
+
+
+	.name, .odds, .event {
+		display: inline;
+		position: relative;
+		float: left;
+		color: black !important;
+	}
+
+	.event {
+		width: 100%;
+		font-weight: bold;
+		padding-bottom: 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	.odds, .name {
+		width: 50%;
+	}
+
+	.odds {
+		text-align: right;
+
+		.odds_value {
+			display:block;
+			padding: 0.5rem;
+			width: 8rem;
+			float: right;
+			padding: 1rem;
+			border: 3px solid $primary_bg;
+			background-color: white;
+			text-align: center;
+			border-radius: 3rem;
+			font-weight: bold;	
+			font-size: 1.5rem;
+		}
+		
+	}
+
+	.name {
+		font-size: 2rem;
+	}
+
+	&.selected {
+		background-color: $dark;
+		color: white;
+		.name, .event {
+			color: white !important;
+		}		
+	}
+
+}
